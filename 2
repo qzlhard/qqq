@@ -1,0 +1,58 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="xm-net-bar-er" name="鑫茂网吧ER图-12单表">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <!-- 1. admin 管理员表 -->
+        <mxCell id="2" value="&lt;b&gt;admin&lt;/b&gt;&lt;BR&gt;管理员表&lt;BR&gt;&lt;HR&gt;id (int(10)) PK 自增 主键ID&lt;BR&gt;username (varchar(255)) 账号&lt;BR&gt;password (varchar(255)) 密码&lt;BR&gt;name (varchar(255)) 姓名&lt;BR&gt;avatar (varchar(255)) 头像&lt;BR&gt;role (varchar(255)) 角色&lt;BR&gt;phone (varchar(255)) 电话&lt;BR&gt;email (varchar(255)) 邮箱" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#e1f5fe;" vertex="1" parent="1">
+          <mxGeometry x="50" y="50" width="220" height="200" as="geometry"/>
+        </mxCell>
+        <!-- 2. cart 购物车表 -->
+        <mxCell id="3" value="&lt;b&gt;cart&lt;/b&gt;&lt;BR&gt;购物车表&lt;BR&gt;&lt;HR&gt;id (int(11)) PK 自增 ID&lt;BR&gt;goods_id (int(11)) 商品ID&lt;BR&gt;num (int(11)) 数量&lt;BR&gt;total (decimal(10,2)) 小计&lt;BR&gt;user_id (int(11)) 用户ID" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#e8f5e8;" vertex="1" parent="1">
+          <mxGeometry x="320" y="50" width="220" height="140" as="geometry"/>
+        </mxCell>
+        <!-- 3. computer 电脑信息表 -->
+        <mxCell id="4" value="&lt;b&gt;computer&lt;/b&gt;&lt;BR&gt;电脑信息表&lt;BR&gt;&lt;HR&gt;id (int(11)) PK 自增 主键ID&lt;BR&gt;no (varchar(255)) 编号&lt;BR&gt;cpu (varchar(255)) CPU&lt;BR&gt;graphics (varchar(255)) 显卡&lt;BR&gt;ram (varchar(255)) 内存&lt;BR&gt;storage (varchar(255)) 存储&lt;BR&gt;monitor (varchar(255)) 显示器&lt;BR&gt;special (varchar(255)) 特色&lt;BR&gt;region_id (int(11)) 所属区域&lt;BR&gt;img (varchar(255)) 图片&lt;BR&gt;status (varchar(255)) 状态" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#fff3e0;" vertex="1" parent="1">
+          <mxGeometry x="590" y="50" width="240" height="240" as="geometry"/>
+        </mxCell>
+        <!-- 4. feedback 反馈信息表 -->
+        <mxCell id="5" value="&lt;b&gt;feedback&lt;/b&gt;&lt;BR&gt;反馈信息表&lt;BR&gt;&lt;HR&gt;id (int(11)) PK 自增 ID&lt;BR&gt;title (varchar(255)) 标题&lt;BR&gt;content (varchar(255)) 内容&lt;BR&gt;img (varchar(255)) 图片&lt;BR&gt;time (varchar(255)) 反馈时间&lt;BR&gt;status (varchar(255)) 状态&lt;BR&gt;reply_content (varchar(255)) 回复内容&lt;BR&gt;reply_time (varchar(255)) 回复时间&lt;BR&gt;user_id (int(11)) 反馈人" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#f3e5f5;" vertex="1" parent="1">
+          <mxGeometry x="890" y="50" width="240" height="220" as="geometry"/>
+        </mxCell>
+        <!-- 5. goods 商品信息表 -->
+        <mxCell id="6" value="&lt;b&gt;goods&lt;/b&gt;&lt;BR&gt;商品信息表&lt;BR&gt;&lt;HR&gt;id (int(11)) PK 自增 主键&lt;BR&gt;name (varchar(255)) 名称&lt;BR&gt;description (varchar(255)) 描述&lt;BR&gt;price (decimal(10,2)) 价格&lt;BR&gt;img (varchar(255)) 图片&lt;BR&gt;status (varchar(255)) 上架状态&lt;BR&gt;time (varchar(255)) 创建时间&lt;BR&gt;num (int(11)) 库存" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#e1f5fe;" vertex="1" parent="1">
+          <mxGeometry x="50" y="300" width="220" height="200" as="geometry"/>
+        </mxCell>
+        <!-- 6. notice 系统公告表 -->
+        <mxCell id="7" value="&lt;b&gt;notice&lt;/b&gt;&lt;BR&gt;系统公告表&lt;BR&gt;&lt;HR&gt;id (int(10)) PK 自增 主键ID&lt;BR&gt;title (varchar(255)) 公告标题&lt;BR&gt;content (text) 公告内容&lt;BR&gt;time (varchar(255)) 发布时间" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#e8f5e8;" vertex="1" parent="1">
+          <mxGeometry x="320" y="300" width="220" height="120" as="geometry"/>
+        </mxCell>
+        <!-- 7. order_detail 订单详情表 -->
+        <mxCell id="8" value="&lt;b&gt;order_detail&lt;/b&gt;&lt;BR&gt;订单详情表&lt;BR&gt;&lt;HR&gt;id (int(11)) PK 自增 ID&lt;BR&gt;goods_id (int(11)) 商品ID&lt;BR&gt;num (int(11)) 数量&lt;BR&gt;total (decimal(10,2)) 小计&lt;BR&gt;user_id (int(11)) 用户ID&lt;BR&gt;order_id (int(11)) 订单ID" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#fff3e0;" vertex="1" parent="1">
+          <mxGeometry x="590" y="300" width="240" height="160" as="geometry"/>
+        </mxCell>
+        <!-- 8. orders 订单信息表 -->
+        <mxCell id="9" value="&lt;b&gt;orders&lt;/b&gt;&lt;BR&gt;订单信息表&lt;BR&gt;&lt;HR&gt;id (int(11)) PK 自增 主键ID&lt;BR&gt;name (varchar(255)) 订单名称&lt;BR&gt;order_no (varchar(255)) 订单编号&lt;BR&gt;total (decimal(10,2)) 总价格&lt;BR&gt;status (varchar(255)) 订单状态&lt;BR&gt;user_id (int(11)) 下单人&lt;BR&gt;time (varchar(255)) 交易时间" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#f3e5f5;" vertex="1" parent="1">
+          <mxGeometry x="890" y="300" width="240" height="180" as="geometry"/>
+        </mxCell>
+        <!-- 9. recharge 充值记录表 -->
+        <mxCell id="10" value="&lt;b&gt;recharge&lt;/b&gt;&lt;BR&gt;充值记录表&lt;BR&gt;&lt;HR&gt;id (int(11)) PK 自增 ID&lt;BR&gt;type (varchar(255)) 账户类型&lt;BR&gt;card_no (varchar(255)) 账号&lt;BR&gt;money (decimal(10,2)) 金额 默认0.00&lt;BR&gt;user_id (int(11)) 用户&lt;BR&gt;time (varchar(255)) 充值时间" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#e1f5fe;" vertex="1" parent="1">
+          <mxGeometry x="50" y="550" width="220" height="160" as="geometry"/>
+        </mxCell>
+        <!-- 10. records 上机记录表 -->
+        <mxCell id="11" value="&lt;b&gt;records&lt;/b&gt;&lt;BR&gt;上机记录表&lt;BR&gt;&lt;HR&gt;id (int(11)) PK 自增 主键ID&lt;BR&gt;region_id (int(11)) 区域&lt;BR&gt;computer_id (int(11)) 电脑&lt;BR&gt;user_id (int(11)) 上机人&lt;BR&gt;total (decimal(10,2)) 总费用&lt;BR&gt;duration (int(11)) 上机时长&lt;BR&gt;start_time (varchar(255)) 开始时间&lt;BR&gt;end_time (varchar(255)) 结束时间&lt;BR&gt;status (varchar(255)) 状态" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#e8f5e8;" vertex="1" parent="1">
+          <mxGeometry x="320" y="550" width="240" height="200" as="geometry"/>
+        </mxCell>
+        <!-- 11. region 区域信息表 -->
+        <mxCell id="12" value="&lt;b&gt;region&lt;/b&gt;&lt;BR&gt;区域信息表&lt;BR&gt;&lt;HR&gt;id (int(11)) PK 自增 主键ID&lt;BR&gt;name (varchar(255)) 名称&lt;BR&gt;usages (varchar(255)) 用途&lt;BR&gt;special (varchar(255)) 特点&lt;BR&gt;img (varchar(255)) 图片&lt;BR&gt;fee (decimal(10,2)) 费用" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#fff3e0;" vertex="1" parent="1">
+          <mxGeometry x="610" y="550" width="220" height="160" as="geometry"/>
+        </mxCell>
+        <!-- 12. user 普通用户表 -->
+        <mxCell id="13" value="&lt;b&gt;user&lt;/b&gt;&lt;BR&gt;普通用户表&lt;BR&gt;&lt;HR&gt;id (int(10)) PK 自增 主键ID&lt;BR&gt;username (varchar(255)) 账号&lt;BR&gt;password (varchar(255)) 密码&lt;BR&gt;name (varchar(255)) 姓名&lt;BR&gt;avatar (varchar(255)) 头像&lt;BR&gt;role (varchar(255)) 角色&lt;BR&gt;phone (varchar(255)) 电话&lt;BR&gt;email (varchar(255)) 邮箱&lt;BR&gt;account (decimal(10,2)) 余额" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#f3e5f5;" vertex="1" parent="1">
+          <mxGeometry x="890" y="550" width="240" height="220" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
